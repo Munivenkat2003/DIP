@@ -1,0 +1,21 @@
+clc;
+close all;
+clear all;
+A = imread('C:\Users\Muni Venkat\Pictures\duke.png');
+subplot(2,2,1);
+imshow(A);
+title('Input Image');
+PSF=fspecial('gaussian',5,5);
+B=imfilter(A,PSF,'symmetric','conv');
+subplot(2,2,2);
+imshow(B);
+title('Blurred Image');
+BPN=imnoise(B,'gaussian',0,0.002);
+subplot(2,2,3);
+imshow(BPN);
+title('Blurred and Noisy Image');
+
+DB=deconvlucy(B,PSF,5);
+subplot(2,2,4);
+imshow(DB);
+title('Deblurred Image');

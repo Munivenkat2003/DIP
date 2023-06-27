@@ -1,0 +1,11 @@
+clc;
+clear all;
+close all;
+A = imread('C:\Users\Muni Venkat\Pictures\duke.png');
+subplot(1,4,1);
+imshow(A);
+title('colour Image');
+B = rgb2gray(A);
+subplot(1,4,2);
+imshow(B);
+title('Grey Scale Image');
